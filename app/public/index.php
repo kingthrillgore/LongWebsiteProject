@@ -39,6 +39,7 @@
         <div class="col-1">
           <!-- Home Link -->
         </div>
+        
         <div class="col-11">
           <nav>
             <ul class="list-group list-group-horizontal">
