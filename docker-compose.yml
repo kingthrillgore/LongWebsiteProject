@@ -7,12 +7,16 @@ services:
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./app:/app
+        networks:
+            - project-network
     php:
         build:
             context: .
             dockerfile: PHP.Dockerfile
         volumes:
             - ./app:/app
+        networks:
+            - project-network
     mysql:
         image: mariadb:latest
         environment:
@@ -24,5 +28,10 @@ services:
             - mysqldata:/var/lib/mysql
         ports:
             - 3306:3306
+        networks:
+        - project-network
+networks:
+  project-network:
+    driver: bridge
 volumes:
     mysqldata: {}

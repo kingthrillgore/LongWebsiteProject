@@ -39,7 +39,7 @@
         <div class="col-1">
           <!-- Home Link -->
         </div>
-        
+
         <div class="col-11">
           <nav>
             <ul class="list-group list-group-horizontal">
@@ -97,7 +97,8 @@
 
               <!-- Results Pane -->
               <div class="col-lg-10 col-md-8">
-
+                <?php include_once("./functions/vehicles.php"); ?>
+                <?php generate_all_vehicle_results(); ?>
               </div>
             </div>
           </div>
