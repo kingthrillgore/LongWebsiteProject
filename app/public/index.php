@@ -41,16 +41,32 @@
         </div>
         <div class="col-11">
           <nav>
-            <ul class="navigation">
+            <ul class="list-group list-group-horizontal">
               <li>
                 <a href="#">Home</a>
+              </li>
+              <li>
                 <a href="#">Inventory</a>
+              </li>
+              <li>
                 <a href="#">Shop From Home</a>
+              </li>
+              <li>
                 <a href="#">About Us</a>
+              </li>
+              <li>
                 <a href="#">Finance</a>
+              </li>
+              <li>
                 <a href="#">News &amp; Updates</a>
+              </li>
+              <li>
                 <a href="#">Parts &amp; Service</a>
+              </li>
+              <li>
                 <a href="#">Long Bodyshop</a>
+              </li>
+              <li>
                 <a href="#">Login Here</a>
               </li>
             </ul>
@@ -94,10 +110,14 @@
         <div class="row">
           <div class="col">
             <h2>Inventory</h2>
-            <ul class="navigation">
+            <ul class="">
               <li>
                 <a href="#">New Vehicles</a>
+              </li>
+              <li>
                 <a href="#">Pre-Owned Vehicles</a>
+              </li>
+              <li>
                 <a href="#">Special Offers</a>
               </li>
             </ul>
@@ -105,9 +125,11 @@
 
           <div class="col">
             <h2>Finance</h2>
-            <ul class="navigation">
+            <ul class="">
               <li>
                 <a href="#">Apple for Financing</a>
+              </li>
+              <li>
                 <a href="#">Value Your Trade</a>
               </li>
             </ul>
@@ -115,9 +137,11 @@
 
           <div class="col">
             <h2>Service & Parts</h2>
-            <ul class="navigation">
+            <ul class="">
               <li>
                 <a href="#">Schedule Service</a>
+              </li>
+              <li>
                 <a href="#">Service Specials</a>
               </li>
             </ul>
@@ -125,23 +149,36 @@
 
           <div class="col">
             <h2>Our Dealership</h2>
-            <ul class="navigation">
+            <ul class="list-group">
               <li>
                 <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
+              </li>
+              <li>
+              <a href="#">Contact Us</a>
+              </li>
+              <li>
                 <a href="#">Reviews</a>
+              </li>
               </li>
             </ul>
           </div>
 
           <div class="col">
             <h2>Stay Connected</h2>
-            <ul class="navigation">
+            <ul class="list-group">
               <li>
                 <a href="#">Facebook</a>
+              </li>
+              <li>
                 <a href="#">Twitter</a>
+              </li>
+              <li>
                 <a href="#">Instagram</a>
+              </li>
+              <li>
                 <a href="#">Mastodon</a>
+              </li>
+              <li>
                 <a href="#">Bluesky</a>
               </li>
             </ul>
@@ -151,7 +188,7 @@
         <!-- Footer Closing -->
         <div class="row">
           <div class="col">
-            <ul class="navigation list-group list-group-horizontal">
+            <ul class="list-group list-group-horizontal">
               <li>
                 <a href="#">Terms</a>
               </li>
