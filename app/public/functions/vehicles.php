@@ -2,6 +2,12 @@
 
 include_once("parse_env.php");
 
+/**
+ * Undocumented function
+ *
+ * @param array $args
+ * @return void
+ */
 function generate_vehicles_conditions(array $args) {
     $conditions = [];
     $params = [];
@@ -56,22 +62,47 @@ function generate_vehicles_conditions(array $args) {
         $params[] = $args['color'];
     }
 
-    // TODO Price Range
+    // Price Range LT
+    if ($args['price_range_gt']) {
+        $conditions[] = "\ni.msrp <= ";
+        $params[] = $args['price_range_gt'];
+    }
 
-    // TODO Mileage
+    // Price Range GT
+    if ($args['price_range_lt']) {
+        $conditions[] = "\ni.msrp .= ";
+        $params[] = $args['price_range_lt'];
+    }
+
+    // Mileage LT
+    if ($args['mileage_lt']) {
+        $conditions[] = "\ni.mileage <= ";
+        $params[] = $args['mileage_lt'];
+    }
+
+    // Mileage GT
+    if ($args['mileage_gt']) {
+        $conditions[] = "\ni.mileage >= ";
+        $params[] = $args['mileage_gt'];
+    }
 
     /* while ($row = $stmt->fetch()) {
         print_r($row);
     } */
 
+    // PDO Get Vehicles
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     print_r($data);
 
-    // PDO Get Vehicles
-
-    // Render Contents to HTML
+    // Return Data for renders
+    return $data;
 }
 
+/**
+ * Returns all vehicles in the database
+ *
+ * @return array
+ */
 function generate_all_vehicle_results() {
     // PDO Connect
     $pdo = pdo_connect();
@@ -107,6 +138,15 @@ function render(array $data) {
     }
 }
 
+function return_vehicle_list() {
+
+}
+
+/**
+ * Use this method to open a PDO object.
+ *
+ * @return \PDO
+ */
 function pdo_connect() {
     // TODO Switch over to use .env
     $host = 'host.docker.internal';
