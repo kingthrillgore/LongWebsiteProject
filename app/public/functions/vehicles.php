@@ -2,14 +2,70 @@
 
 include_once("parse_env.php");
 
-function generate_vehicles_markup() {
+function generate_vehicles_conditions(array $args) {
+    $conditions = [];
+    $params = [];
+
     // PDO Connect
     $pdo = pdo_connect();
     $stmt = $pdo->query("SELECT * FROM inventory");
+    $sql = 'SELECT i.id, 
+        i.stock_id,
+        i.msrp AS "price",
+        i.mileage,
+        i.photo_url,
+        cl.name AS "color",
+        ve.name AS "vehicle_name",
+        ve.model_year,
+        br.name AS "brand_name",
+        co.condition AS "condition"
+    FROM inventory i
+    INNER JOIN vehicles ve ON i.vehicle = ve.id
+    INNER JOIN conditions co ON i.condition = co.id
+    INNER JOIN brands br ON ve.brand = br.id
+    INNER JOIN colors cl ON i.color = cl.id';
 
-    while ($row = $stmt->fetch()) {
-        print_r($row);
+    // Prepare where statements
+    // Condition
+    if ($args['condition']) {
+        $conditions[] = "\nco.id = ?";
+        $params[] = $args['condition'];
     }
+
+    // Year
+    if ($args['year']) {
+        $conditions[] = "\nve.model_year = ?";
+        $params[] = $args['year'];
+    }
+
+    // Brand
+    if ($args['brand']) {
+        $conditions[] = "\nbr.id = ?";
+        $params[] = $args['brand'];
+    }
+
+    // TODO Model
+    /* if ($args['model']) {
+        $conditions[] = "\nbr.id = ?";
+        $params[] = $args['brand'];
+    } */
+
+    // Color
+    if ($args['color']) {
+        $conditions[] = "\nco.id = ?";
+        $params[] = $args['color'];
+    }
+
+    // TODO Price Range
+
+    // TODO Mileage
+
+    /* while ($row = $stmt->fetch()) {
+        print_r($row);
+    } */
+
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    print_r($data);
 
     // PDO Get Vehicles
 
@@ -35,14 +91,20 @@ function generate_all_vehicle_results() {
         INNER JOIN vehicles ve ON i.vehicle = ve.id
         INNER JOIN conditions co ON i.condition = co.id
         INNER JOIN brands br ON ve.brand = br.id
-        INNER JOIN colors cl ON i.color = cl.id'
+        INNER JOIN colors cl ON i.color = cl.id;'
     );
 
-    while ($row = $stmt->fetch()) {
-        print_r($row);
-    }
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    print_r($data);
 
-    // Render Contents to HTML
+    // Return Data for renders
+    return $data;
+}
+
+function render(array $data) {
+    foreach ($data as $row) {
+
+    }
 }
 
 function pdo_connect() {
