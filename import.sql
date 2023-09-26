@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `colors` (
   KEY `color_name_idx` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Colors for vehicles';
 
--- Dumping data for table project.colors: ~6 rows (approximately)
+-- Dumping data for table project.colors: ~7 rows (approximately)
 DELETE FROM `colors`;
 INSERT INTO `colors` (`id`, `name`) VALUES
 	(1, 'White'),
@@ -92,6 +92,75 @@ INSERT INTO `conditions` (`id`, `condition`) VALUES
 	(1, 'New'),
 	(2, 'Pre-Owned'),
 	(3, 'TLO');
+
+-- Dumping structure for table project.features
+DROP TABLE IF EXISTS `features`;
+CREATE TABLE IF NOT EXISTS `features` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `feature` varchar(255) DEFAULT NULL COMMENT 'Feature Description',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Vehicle Features';
+
+-- Dumping data for table project.features: ~37 rows (approximately)
+DELETE FROM `features`;
+INSERT INTO `features` (`id`, `feature`) VALUES
+	(1, 'Preferred Equipment Group 4SA'),
+	(2, '3.23 Real Axle Ratio'),
+	(3, 'Auto-Locking Real Differential'),
+	(4, 'Wheels: 18" x 8.5" 6-Spoke Machined Aluminum'),
+	(5, '20" Polished Aluminum Wheels'),
+	(6, 'Front 40/20/40 Split-Bench Seat'),
+	(7, 'Front Bucket Seats'),
+	(8, 'Perf Leather-Appointed Front Outboard Seat Trim'),
+	(9, '10-Way Power Driver Seat Adjuster w/Lumbar'),
+	(10, 'Standard Suspension Package'),
+	(11, 'High Capacity Suspension Package'),
+	(12, 'Radio: Premium GMC Infotainment Audio System'),
+	(13, 'SLT Convenience Package'),
+	(14, 'SLT Preferred Package'),
+	(15, 'SLT Premium Plus Package'),
+	(16, 'Sierra Safety Plus Package'),
+	(17, 'Adaptive Cruise Control'),
+	(18, 'Color-Keyed Carpeting Floor Covering'),
+	(19, '120-Volt Instrument Panel Power Outlet'),
+	(20, 'Manual Tilt-Wheel & Telescoping Steering Column'),
+	(21, 'Not Equipped w/Steering Column Lock'),
+	(22, 'Spray-On Pickup Bed Liner w/GMC Logo'),
+	(23, 'Chrome Wheel To Wheel Assist Steps'),
+	(24, 'LED Cargo Area Lighting'),
+	(25, 'Rear Wheelhouse Liners'),
+	(26, 'Trailering Package'),
+	(27, 'ProGrade Trailering System'),
+	(28, 'Integrated Trailer Brake Controller'),
+	(29, 'Electric Rear-Window Defogger'),
+	(30, 'Deep-Tinted Glass'),
+	(31, 'Driver Memory'),
+	(32, 'Power Sliding Rear Window w/Rear Defogger'),
+	(33, '10-Way Power Passenger Seat Adjuster w/Lumbar'),
+	(34, 'GMC Connected Access Capable'),
+	(35, 'Keyless Open & Start'),
+	(36, 'Electronic Precision Shift'),
+	(37, 'Power Rake & Telescoping Steering Column');
+
+-- Dumping structure for table project.features_vehicles
+DROP TABLE IF EXISTS `features_vehicles`;
+CREATE TABLE IF NOT EXISTS `features_vehicles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `feature_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Feature ID',
+  `vehicle_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Vehicle ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='1 to Many table for Features associated with a vehicle';
+
+-- Dumping data for table project.features_vehicles: ~7 rows (approximately)
+DELETE FROM `features_vehicles`;
+INSERT INTO `features_vehicles` (`id`, `feature_id`, `vehicle_id`) VALUES
+	(1, 1, 2),
+	(2, 2, 2),
+	(3, 3, 2),
+	(4, 8, 2),
+	(5, 15, 2),
+	(6, 22, 2),
+	(7, 26, 2);
 
 -- Dumping structure for table project.inventory
 DROP TABLE IF EXISTS `inventory`;
