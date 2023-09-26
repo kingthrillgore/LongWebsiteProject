@@ -19,7 +19,51 @@
       <!-- Content Start -->
       <div class="main" id="main">
         <div class="container-fluid">
+            <div class="row">
+                <h1>Vehicle Name</h1>
+            </div>
 
+            <div class="row">
+                <a href="#">Back to Inventory</a>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-7">
+                    <!-- Vehicle Photo -->
+                    <div class="row">
+                        <img src="#" alt="vehicle image" />
+                    </div>
+
+                    <div class="features">
+                        <!-- TODO Vehicle Features -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Pricing Details</h2>
+                            </div>
+                            
+                            <div class="col-md-12">
+                            
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Dealer Description</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+
+                </div>
+            </div>
         </div>
       </div>
 

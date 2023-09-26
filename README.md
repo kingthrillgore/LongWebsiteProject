@@ -19,7 +19,7 @@ Load the site as intended.
 ## Tasks
 
 - [] Display a basic version of https://longofathens.com/gs-vehicle/list?filter=New (80% Done)
-- [] Allow a click through to a detail page with more data on the Car
+- [] Allow a click through to a detail page with more data on the Car (20% Done)
 - [] Add Login support (20% done)
 - [] Add Dashboard page (gated behind login)
 - [] Allow editing of a vehicle from the dashboard page
