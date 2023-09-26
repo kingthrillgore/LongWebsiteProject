@@ -184,6 +184,20 @@ class Vehicles {
 
     }
 
+    public function return_vehicle_features(int $id) {
+        // PDO Connect
+        $pdo = $this->pdo_connect();
+        $stmt = $pdo->prepare('SELECT fe.feature
+            FROM features fe
+            INNER JOIN features_vehicles fev ON fev.feature_id = fe.id
+            INNER JOIN vehicles ve ON ve.id = fev.vehicle_id
+            WHERE ve.id = ?');
+        $stmt->execute([$id]);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
     /**
      * Undocumented function
      *
