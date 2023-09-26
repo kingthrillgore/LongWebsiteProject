@@ -9,9 +9,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     <link rel="stylesheet" href="static/styles/styles.css" />
-
   </head>
 
   <body>
@@ -50,21 +48,62 @@
               </li>
               <li>
                 <a href="#">Inventory</a>
+                <ul>
+                  <li>
+                    <a href="#">New Vehicles</a>
+                  </li>
+                  <li>
+                    <a href="#">Pre-Owned Vehicles</a>
+                  </li>
+                  <li>
+                    <a href="#">Electric Vehicles</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="#">Shop From Home</a>
               </li>
               <li>
                 <a href="#">About Us</a>
+                <ul>
+                  <li>
+                    <a href="#">History</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Hours and Directions</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="#">Finance</a>
+                <ul>
+                  <li>
+                    <a href="#">Credit Application</a>
+                  </li>
+                  <li>
+                    <a href="#">Value Your Trade</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="#">News &amp; Updates</a>
               </li>
               <li>
                 <a href="#">Parts &amp; Service</a>
+                <ul>
+                  <li>
+                    <a href="#">Accessories</a>
+                  </li>
+                  <li>
+                    <a href="#">Request Service Appointment</a>
+                  </li>
+                  <li>
+                    <a href="#">Recalls</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="#">Long Bodyshop</a>
@@ -101,7 +140,7 @@
               <div class="col-lg-10 col-md-8">
                 <?php
                   $vehicles = new Vehicles();
-                  return $vehicles->generate_page();
+                  $vehicles->generate_page();
                 ?>
               </div>
             </div>

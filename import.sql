@@ -110,10 +110,10 @@ CREATE TABLE IF NOT EXISTS `inventory` (
 -- Dumping data for table project.inventory: ~4 rows (approximately)
 DELETE FROM `inventory`;
 INSERT INTO `inventory` (`id`, `vehicle`, `condition`, `stock_id`, `color`, `msrp`, `mileage`, `photo_url`) VALUES
-	(1, 1, 1, 1, 1, 76295.00, 8, NULL),
-	(2, 2, 1, 2, 2, 66890.00, 4, NULL),
-	(3, 3, 1, 3, 1, 37990.00, 3062, NULL),
-	(4, 3, 1, 4, 1, 38870.00, 3191, NULL);
+	(1, 1, 1, 1, 1, 76295.00, 8, 'image-1.jpg'),
+	(2, 2, 1, 2, 2, 66890.00, 4, 'image-2.jpg'),
+	(3, 3, 1, 3, 1, 37990.00, 3062, 'image-3.jpg'),
+	(4, 3, 1, 4, 1, 38870.00, 3191, 'image-4.jpg');
 
 -- Dumping structure for table project.manufacturers
 DROP TABLE IF EXISTS `manufacturers`;

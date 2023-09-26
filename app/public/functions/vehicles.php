@@ -151,6 +151,7 @@ class Vehicles {
             print '<h3>'. $this->generate_full_vehicle_name($record).'</h3>';
             print '<a href="#">Video</a>';
             print $this->generate_details_rendered($record);
+            print $this->generate_row_links_rendered();
             print '</div>';
             print '</div>';
         }
@@ -201,12 +202,13 @@ class Vehicles {
      */
     private function generate_details_rendered(array $record) {
         $output = "";
+        //$price = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
 
         $output .= "<dl>\n";
         $output .= "\t<dt>Condition:</dt>\n";
         $output .= "\t<dd>" . $record['condition'] . "</dd>\n";
         $output .= "\t<dt>Retail Price:</dt>\n";
-        $output .= "\t<dd>" . $record['msrp'] . "</dd>\n";
+        $output .= "\t<dd>$" . sprintf('%01.2f', $record['msrp']) . "</dd>\n";
         $output .= "\t<dt>Stock #:</dt>\n";
         $output .= "\t<dd>". $record['stock_id'] . "</dd>\n";
         $output .= "\t<dt>Mileage:</dt>";
@@ -227,7 +229,18 @@ class Vehicles {
     }
 
     private function generate_row_links_rendered() {
-        
+        $output = "";
+
+        $output .= "<div>\n";
+        $output .= "\t<a href='#'>Calculate Payments</a>\n";
+        $output .= "\t<a href='#'>Details</a>\n";
+        $output .= "\t<a href='#'>Incentives</a>\n";
+        $output .= "\t<a href='#'>Concierge</a>\n";
+        $output .= "\t<a href='#'>Compare</a>\n";
+        $output .= "\t<a href='#'>Get Pre-Approved Now</a>\n";
+        $output .= "</div>";
+
+        return $output;
     }
 
     /**
