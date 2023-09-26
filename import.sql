@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `colors` (
   KEY `color_name_idx` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Colors for vehicles';
 
--- Dumping data for table project.colors: ~7 rows (approximately)
+-- Dumping data for table project.colors: ~6 rows (approximately)
 DELETE FROM `colors`;
 INSERT INTO `colors` (`id`, `name`) VALUES
 	(1, 'White'),
@@ -150,6 +150,19 @@ CREATE TABLE IF NOT EXISTS `model` (
 
 -- Dumping data for table project.model: ~0 rows (approximately)
 DELETE FROM `model`;
+
+-- Dumping structure for table project.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+  `email` varchar(255) NOT NULL COMMENT 'Email',
+  `password` varchar(255) NOT NULL COMMENT 'bcrypt crypted password',
+  `status` varchar(255) DEFAULT NULL COMMENT 'Account Status',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table project.users: ~0 rows (approximately)
+DELETE FROM `users`;
 
 -- Dumping structure for table project.vehicles
 DROP TABLE IF EXISTS `vehicles`;
