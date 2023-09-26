@@ -20,7 +20,17 @@
       <div class="main" id="main">
         <div class="container-fluid">
             <div class="row">
-
+                <div class="col-6">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
       </div>
