@@ -1,3 +1,5 @@
+<?php include_once("./functions/vehicles.php"); ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -97,8 +99,10 @@
 
               <!-- Results Pane -->
               <div class="col-lg-10 col-md-8">
-                <?php include_once("./functions/vehicles.php"); ?>
-                <?php generate_all_vehicle_results(); ?>
+                <?php
+                  $vehicles = new Vehicles();
+                  return $vehicles->generate_page();
+                ?>
               </div>
             </div>
           </div>

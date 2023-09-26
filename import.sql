@@ -16,10 +16,12 @@
 
 
 -- Dumping database structure for project
+DROP DATABASE IF EXISTS `project`;
 CREATE DATABASE IF NOT EXISTS `project` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `project`;
 
 -- Dumping structure for table project.brands
+DROP TABLE IF EXISTS `brands`;
 CREATE TABLE IF NOT EXISTS `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `name` varchar(255) NOT NULL DEFAULT '0' COMMENT 'Brand Name',
@@ -56,19 +58,27 @@ INSERT INTO `brands` (`id`, `name`) VALUES
 	(19, 'Toyota');
 
 -- Dumping structure for table project.colors
+DROP TABLE IF EXISTS `colors`;
 CREATE TABLE IF NOT EXISTS `colors` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `name` varchar(255) NOT NULL DEFAULT '0' COMMENT 'Color Name',
   KEY `id` (`id`),
   KEY `color_name_idx` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Colors for vehicles';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Colors for vehicles';
 
--- Dumping data for table project.colors: ~1 rows (approximately)
+-- Dumping data for table project.colors: ~7 rows (approximately)
 DELETE FROM `colors`;
 INSERT INTO `colors` (`id`, `name`) VALUES
-	(1, 'White');
+	(1, 'White'),
+	(2, 'Blue'),
+	(3, 'Red'),
+	(4, 'Grey'),
+	(5, 'Black'),
+	(6, 'Violet'),
+	(7, 'Silver');
 
 -- Dumping structure for table project.conditions
+DROP TABLE IF EXISTS `conditions`;
 CREATE TABLE IF NOT EXISTS `conditions` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `condition` varchar(255) NOT NULL DEFAULT '0' COMMENT 'Condition',
@@ -84,6 +94,7 @@ INSERT INTO `conditions` (`id`, `condition`) VALUES
 	(3, 'TLO');
 
 -- Dumping structure for table project.inventory
+DROP TABLE IF EXISTS `inventory`;
 CREATE TABLE IF NOT EXISTS `inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `vehicle` int(11) DEFAULT NULL COMMENT 'Vehicle ID',
@@ -94,14 +105,18 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `mileage` int(11) DEFAULT NULL COMMENT 'Mileage',
   `photo_url` varchar(255) DEFAULT NULL COMMENT 'Photo URL for vehicle',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Active inventory at the dealership';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Active inventory at the dealership';
 
--- Dumping data for table project.inventory: ~1 rows (approximately)
+-- Dumping data for table project.inventory: ~4 rows (approximately)
 DELETE FROM `inventory`;
 INSERT INTO `inventory` (`id`, `vehicle`, `condition`, `stock_id`, `color`, `msrp`, `mileage`, `photo_url`) VALUES
-	(1, 1, 1, 1, 1, 76295.00, 8, NULL);
+	(1, 1, 1, 1, 1, 76295.00, 8, NULL),
+	(2, 2, 1, 2, 2, 66890.00, 4, NULL),
+	(3, 3, 1, 3, 1, 37990.00, 3062, NULL),
+	(4, 3, 1, 4, 1, 38870.00, 3191, NULL);
 
 -- Dumping structure for table project.manufacturers
+DROP TABLE IF EXISTS `manufacturers`;
 CREATE TABLE IF NOT EXISTS `manufacturers` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `name` varchar(255) NOT NULL DEFAULT '0' COMMENT 'Manufacturer Name',
@@ -125,6 +140,7 @@ INSERT INTO `manufacturers` (`id`, `name`) VALUES
 	(6, 'Toyota');
 
 -- Dumping structure for table project.model
+DROP TABLE IF EXISTS `model`;
 CREATE TABLE IF NOT EXISTS `model` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `name` varchar(255) NOT NULL DEFAULT '0' COMMENT 'Model Name',
@@ -136,6 +152,7 @@ CREATE TABLE IF NOT EXISTS `model` (
 DELETE FROM `model`;
 
 -- Dumping structure for table project.vehicles
+DROP TABLE IF EXISTS `vehicles`;
 CREATE TABLE IF NOT EXISTS `vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `name` varchar(255) DEFAULT '' COMMENT 'Vehicle Name',
