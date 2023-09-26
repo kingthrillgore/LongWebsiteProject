@@ -19,32 +19,7 @@
       <!-- Content Start -->
       <div class="main" id="main">
         <div class="container-fluid">
-          <div class="vehicles" id="vehicles">
 
-            <!-- Top Ad -->
-            <div class="row" id="vehicle_advert">
-              <a href="#">
-                <img src="static/images/700CreditBanner6.png" alt="Advertisment" />
-              </a> 
-            </div>
-
-            <!-- Vehicles Main -->
-            <div class="row" id="vehicles_list">
-            
-              <!-- Context Pane -->
-              <div class="col-lg-2 col-md-4">
-
-              </div>
-
-              <!-- Results Pane -->
-              <div class="col-lg-10 col-md-8">
-                <?php
-                  $vehicles = new Vehicles();
-                  $vehicles->generate_page();
-                ?>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
