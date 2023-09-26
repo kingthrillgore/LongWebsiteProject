@@ -14,19 +14,19 @@
 
   <body>
     <div id="parent" class="main slideout-panel slideout-panel-left">
-      <?php require_once("./templates/heading.php"); ?>
+      <?php require_once(dirname(__FILE__) . "/templates/heading.php"); ?>
 
       <!-- Content Start -->
       <div class="main" id="main">
         <div class="container-fluid">
             <div class="row">
-                
+
             </div>
         </div>
       </div>
 
       <!-- Footer -->
-      <?php require_once("./templates/footer.php"); ?>
+      <?php require_once(dirname(__FILE__) . "/templates/footer.php"); ?>
     </div>
 
     <!-- Optional JavaScript -->

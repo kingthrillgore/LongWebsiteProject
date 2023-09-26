@@ -1,4 +1,4 @@
-<?php include_once("./functions/vehicles.php"); ?>
+<?php include_once("./classes/vehicles.php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -14,7 +14,7 @@
 
   <body>
     <div id="parent" class="main slideout-panel slideout-panel-left">
-      <?php require_once("./templates/heading.php"); ?>
+      <?php require_once(dirname(__FILE__) . "/templates/heading.php"); ?>
 
       <!-- Content Start -->
       <div class="main" id="main">
@@ -31,7 +31,7 @@
             <!-- Vehicles Main -->
             <div class="row" id="vehicles_list">
             
-              <!-- Context Pane -->
+              <!-- Filter Pane -->
               <div class="col-lg-2 col-md-4">
 
               </div>
@@ -49,7 +49,7 @@
       </div>
 
       <!-- Footer -->
-      <?php require_once("./templates/footer.php"); ?>
+      <?php require_once(dirname(__FILE__) ."/templates/footer.php"); ?>
     </div>
 
     <!-- Optional JavaScript -->

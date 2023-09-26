@@ -1,6 +1,6 @@
 <?php
 
-include_once("parse_env.php");
+include_once( dirname(__FILE__) . "/../helpers/parse_env.php");
 
 class Vehicles {
     // Fields
