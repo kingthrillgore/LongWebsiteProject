@@ -28,6 +28,8 @@
               </a> 
             </div>
 
+            <?php include_once("./helpers/database_handler.php"); ?>
+
             <!-- Vehicles Main -->
             <div class="row" id="vehicles_list">
             
